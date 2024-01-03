@@ -44,11 +44,11 @@ public class AuthRunner implements ApplicationRunner {
 		//setRoleDefault();
 		
 		
-		Set<String> roles = new HashSet<String>();
-		roles.add("ADMIN");
-		RegisterDto admin = new RegisterDto("admin","admin","test@email.it","admin",roles);
-		asi.register(admin);
-		
+//		Set<String> roles = new HashSet<String>();
+//		roles.add("ADMIN");
+//		RegisterDto admin = new RegisterDto("admin","admin","test@email.it","admin",roles);
+//		asi.register(admin);
+//		
 		
 		
 		 
