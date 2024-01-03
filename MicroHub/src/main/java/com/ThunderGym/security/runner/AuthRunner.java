@@ -41,7 +41,7 @@ public class AuthRunner implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("Run...");
 		// Da lanciare solo la prima volta
-		setRoleDefault();
+		//setRoleDefault();
 		
 		
 		Set<String> roles = new HashSet<String>();
