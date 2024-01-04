@@ -24,7 +24,7 @@ public class MaintenanceRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		ms.creaClienti();
+		//ms.creaClienti();
 //		ms.creaProject("ThunderGym");
 //		ms.creaProject("GamesCompilation");
 		
