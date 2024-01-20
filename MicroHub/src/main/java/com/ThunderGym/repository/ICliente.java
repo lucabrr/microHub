@@ -10,7 +10,9 @@ import com.ThunderGym.classes.Cliente;
 @Repository
 public interface ICliente extends CrudRepository<Cliente, Long>{
 
-	@Query("SELECT c FROM Cliente c WHERE EXTRACT(YEAR FROM c.dataIscrizione) = EXTRACT(YEAR FROM CURRENT_DATE) AND EXTRACT(MONTH FROM c.dataIscrizione) = EXTRACT(MONTH FROM CURRENT_DATE) - 1")
+	@Query("SELECT c FROM Cliente c WHERE " +
+		       "(EXTRACT(YEAR FROM c.dataIscrizione) = EXTRACT(YEAR FROM CURRENT_DATE) AND EXTRACT(MONTH FROM c.dataIscrizione) = EXTRACT(MONTH FROM CURRENT_DATE) - 1) OR " +
+		       "(EXTRACT(YEAR FROM c.dataIscrizione) = EXTRACT(YEAR FROM CURRENT_DATE) - 1 AND EXTRACT(MONTH FROM c.dataIscrizione) = 12 AND EXTRACT(MONTH FROM CURRENT_DATE) = 1)")
 	List<Cliente> findUsersByLastMonthRegistrationDateMinus1();
 	
 	@Query("SELECT c FROM Cliente c WHERE EXTRACT(YEAR FROM c.dataIscrizione) = EXTRACT(YEAR FROM CURRENT_DATE) AND EXTRACT(MONTH FROM c.dataIscrizione) = EXTRACT(MONTH FROM CURRENT_DATE)")
